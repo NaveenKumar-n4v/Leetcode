@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int minMoves(int target, int two) {
+        int count =0;
+        int n =0;
+        while(target>1 && n<two){
+            if(target%2==0){
+                count +=1;
+                n++;
+                target = target /2;
+            }
+            else{
+                count +=1;
+                target--;
+        }
+        }
+       return count + (target-1); 
+    }
+};
