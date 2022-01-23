@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int countElements(vector<int>& v) {
+        // return nums.size()-2;
+        sort(v.begin(),v.end());
+        int mi = v[0];
+        int mx = v[v.size()-1];
+        int count =0;
+        for(int i=1;i<v.size()-1;i++){
+            if(mi<v[i] && v[i]<mx){
+                count +=1;
+                }
+        }
+        return count;
+    }
+};
