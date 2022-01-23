@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> findLonely(vector<int>& v) {
+     	sort(v.begin(), v.end());
+	// v.erase(unique(v.begin(), v.end()), v.end());
+	vector<int>x;
+	if ( v[0] + 1 != v[0 + 1])
+		x.push_back(v[0]);
+	else if ((v[v.size()] - 1 != v[v.size() - 1]))
+		x.push_back(v[v.size() - 1]);
+	for (int i = 1; i < v.size() - 1; i++) {
+		if ((v[i - 1] != v[i] - 1) && ((v[i + 1] != v[i] + 1))) {
+			if ((v[i] == v[i + 1] ) || ( v[i] == v[i - 1])) {
+				// x.push_back(v[i]);
+				continue;
+			}
+			else
+				x.push_back(v[i]);
+		}
+	}
+        return x;
+    }
+};
