@@ -1,17 +1,13 @@
 class Solution {
 public:
-    string restoreString(string s, vector<int>& indices) {
-        map<int,char>mpp;
-        int k=0;
-        for(auto i : indices){
-            char c = s[k];
-            mpp.insert({i,c});
-            k++;
+   string restoreString(string s, vector<int>& indices) {
+	const int n = s.size();
+	for(int i=0;i<n;++i){
+		while(indices[i]!=i){
+			swap(s[i],s[indices[i]]);
+			swap(indices[i],indices[indices[i]]);
+		}
+	}
+	return s;
 }
-        string sx;
-        for(auto i : mpp){
-            sx+=i.second;
-}
-        return sx;
-    }
 };
