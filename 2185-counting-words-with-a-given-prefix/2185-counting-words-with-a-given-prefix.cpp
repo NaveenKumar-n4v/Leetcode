@@ -2,10 +2,13 @@ class Solution {
 public:
     int prefixCount(vector<string>& words, string pref) {
         int cnt=0;
-        int k = pref.size();
         for(auto each : words){
-            if(each.size()>=k){
-                if(each.substr(0,k)==pref)cnt++;
+            int mi=0;
+            if(each.size()>=pref.size()){
+            for(int i=0;i<pref.size();i++){
+                if(each[i]==pref[i])mi+=1;
+            }
+            if(mi == pref.size())cnt++;
             }
         }
         return cnt;
