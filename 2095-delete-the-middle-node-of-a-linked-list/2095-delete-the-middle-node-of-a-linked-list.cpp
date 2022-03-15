@@ -24,10 +24,7 @@ public:
         }
         // cout<<ptr->val<<endl;
         ptr->next = ptr->next->next;
-        return head;
-        
-        
-        
-        
+        delete p1;
+        return head; 
     }
 };
