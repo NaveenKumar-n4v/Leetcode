@@ -11,7 +11,6 @@
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
-        head=head->next;
         ListNode* main=head;
         while(main){
             ListNode* sub=main;
@@ -24,6 +23,7 @@ public:
             main->next=sub->next;
             main = main->next;
         }
+        head=head->next;
         return head;
     }
 };
