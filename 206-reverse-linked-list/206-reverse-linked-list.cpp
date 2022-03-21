@@ -16,7 +16,7 @@ public:
         ListNode* current_p=head;
         ListNode* next_p;
         
-        while(current_p != NULL){
+        while(current_p){
             next_p = current_p->next;
             current_p->next = prev_p;
             
