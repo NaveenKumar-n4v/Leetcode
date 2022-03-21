@@ -12,12 +12,17 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
         
-        ListNode* ptr1 = head;
-        ListNode* ptr2 = head;
-        while(ptr2!= NULL and ptr2->next!=NULL){
-            ptr1=ptr1->next;
-            ptr2=ptr2->next->next;
+        // O(N/2)
+        // O(1)
+        // slow fast ptr - tortoise method
+        ListNode* slow=head;
+        ListNode* fast=head;
+        
+        while(fast!=NULL and fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
         }
-        return ptr1;    
+        return slow;
+        
     }
 };
