@@ -11,36 +11,60 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        if(head->next==NULL)return NULL;
-        if(head->next->next == NULL){
-            if(n==1){
-                head->next=NULL;
-                return head;
-            }
-            else
-                return head->next;
+        
+        //BRUTE WITH LOT AND LOTS OFF ****** EDGE CASES
+        // O(N) + O(N)
+        // if(head->next==NULL)return NULL;
+        // if(head->next->next == NULL){
+        //     if(n==1){
+        //         head->next=NULL;
+        //         return head;
+        //     }
+        //     else
+        //         return head->next;
+        // }
+        // int count=0;
+        // ListNode* nx = head;
+        // while(nx!= NULL){
+        //     nx = nx->next;
+        //     count++;
+        // }
+        // int to_del = count - n;
+        // // cout<<to_del;
+        // ListNode* mx = head;
+        // int newCount=0;
+        // first node
+        // if(n==count)return head->next;
+        // while(mx !=NULL){
+        //     if(newCount == to_del-1){
+        //         if(mx->next->next !=NULL)
+        //         mx->next=mx->next->next;
+        //         else
+        //             mx->next = NULL;
+        //     }
+        //     mx=mx->next;
+        //     newCount++;
+        // }
+        // return head;
+        
+        
+        
+        //Optimal
+        // O(N)at max N
+        ListNode* dummy = new ListNode();
+        dummy->next =head;
+        ListNode* fast = dummy;
+        ListNode* slow = dummy;
+        while(n--){
+            fast = fast->next;
         }
-        int count=0;
-        ListNode* nx = head;
-        while(nx!= NULL){
-            nx = nx->next;
-            count++;
+        while(fast->next != NULL){
+            fast=fast->next;
+            slow=slow->next;
         }
-        int to_del = count - n;
-        // cout<<to_del;
-        ListNode* mx = head;
-        int newCount=0;
-        if(n==count)return head->next;
-        while(mx !=NULL){
-            if(newCount == to_del-1){
-                if(mx->next->next !=NULL)
-                mx->next=mx->next->next;
-                else
-                    mx->next = NULL;
-            }
-            mx=mx->next;
-            newCount++;
-        }
-        return head;
+        slow->next = slow->next->next;
+        return dummy->next;
+        
+        
     }
 };
