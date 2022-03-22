@@ -10,13 +10,17 @@ class Solution {
 public:
     void deleteNode(ListNode* node) {
         
-        //Brute
-        ListNode* brute;
-        while(node->next != NULL){
-            brute = node;
-            node->val = node->next->val;
-            node = node->next;
-        }
-        brute->next = NULL;     
+        // //Brute
+        // ListNode* brute;
+        // while(node->next != NULL){
+        //     brute = node;
+        //     node->val = node->next->val;
+        //     node = node->next;
+        // }
+        // brute->next = NULL;
+        
+        //Optimal
+        node->val = node->next->val;
+        node->next = node->next->next;
     }
 };
