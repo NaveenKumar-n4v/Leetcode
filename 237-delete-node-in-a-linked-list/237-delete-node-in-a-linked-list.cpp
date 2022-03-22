@@ -9,12 +9,14 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-        ListNode* val;
-    while(node->next!=NULL){
-        val = node;
-        node->val = node->next->val;
-        node = node->next;
-    }
-    val->next=NULL;
+        
+        //Brute
+        ListNode* brute;
+        while(node->next != NULL){
+            brute = node;
+            node->val = node->next->val;
+            node = node->next;
+        }
+        brute->next = NULL;     
     }
 };
