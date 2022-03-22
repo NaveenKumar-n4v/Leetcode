@@ -51,6 +51,7 @@ public:
         
         //Optimal
         // O(N)at max N
+        // new LL
         ListNode* dummy = new ListNode();
         dummy->next =head;
         ListNode* fast = dummy;
@@ -63,8 +64,7 @@ public:
             slow=slow->next;
         }
         slow->next = slow->next->next;
-        return dummy->next;
-        
-        
+        // coz dummy will be NULL
+        return dummy->next; 
     }
 };
