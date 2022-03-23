@@ -2,11 +2,15 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* res = new ListNode(0);
+        // Brute and optimal
+        // TC O(Max(n2,n2))
+        // SC O(N)
         
+        ListNode* res = new ListNode(0);
         int carry =0;
         ListNode* dummy = res;
-        while(l1 != NULL || l2 !=NULL||carry){
+        
+        while(l1 || l2 || carry){
             int count =0;
             if(l1 != NULL){
             count += l1->val;
@@ -18,11 +22,12 @@ public:
             }
             count+=carry;
             carry = count/10;
+            
             dummy->next = new ListNode(count%10);
             dummy = dummy->next;
+            
         }
         return res->next;
-        
         
     }
 };
