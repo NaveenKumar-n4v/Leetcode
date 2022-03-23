@@ -23,7 +23,8 @@ public:
             count+=carry;
             carry = count/10;
             
-            dummy->next = new ListNode(count%10);
+            ListNode* temp = new ListNode(count%10);
+            dummy->next = temp;
             dummy = dummy->next;
             
         }
