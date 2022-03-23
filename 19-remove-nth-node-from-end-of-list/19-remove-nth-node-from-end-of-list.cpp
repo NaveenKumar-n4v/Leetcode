@@ -53,6 +53,8 @@ public:
         // O(N)at max N
         // new LL
         ListNode* dummy = new ListNode();
+        // dummy = dummy->next;
+        // dummy = head;
         dummy->next =head;
         ListNode* fast = dummy;
         ListNode* slow = dummy;
