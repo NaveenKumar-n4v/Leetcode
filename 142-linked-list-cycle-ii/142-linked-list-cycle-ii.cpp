@@ -25,11 +25,11 @@ public:
             }
         }
         if(slow != head)return NULL;
-        while(fast->next && fast->next->next){
-            if(slow == fast)return slow;
+        while(slow != fast){
+            // if(slow == fast)return slow;
             fast = fast->next;
             slow = slow->next;
         }
-        return NULL;
+        return slow;
     }
 };
