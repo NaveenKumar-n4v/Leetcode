@@ -3,9 +3,9 @@ public:
     int convertTime(string current, string correct) {
         
     int t1 = stoi(current.substr(0, 2));
-	int t2 = stoi(current.substr(3, 5));
+	int t2 = stoi(current.substr(3, 6));
 	int t3 = stoi(correct.substr(0, 2));
-	int t4 = stoi(correct.substr(3, 5));
+	int t4 = stoi(correct.substr(3, 6));
 	// cout << t1 << " " << t2 << " " << t3 << " " << t4 << endl;
 	int mini = t1 * 60 + t2;
 	int maxi = t3 * 60 + t4;
