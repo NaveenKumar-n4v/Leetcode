@@ -12,6 +12,7 @@ public:
             else if(arr[mid]>arr[high]){
                 low = mid +1;
             }
+            // Edge case - when mid and high are equal just reduce high--;
             else
                 high--;
         }
