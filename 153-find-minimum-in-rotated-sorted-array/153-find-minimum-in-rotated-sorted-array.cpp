@@ -12,10 +12,13 @@ public:
                 high = mid;
             }
             else if(nums[mid]>nums[high]){
+                // No need to check low coz smaller element lies to right of mid 
+                // So low = m+1;
                 low = mid+1;
             }
             else
-                return nums[low];
+                //if single element its the answer if you dont use this code will overflow
+                return nums[high];
             
         }
         cout<<nums[low]<<" "<<nums[high];
