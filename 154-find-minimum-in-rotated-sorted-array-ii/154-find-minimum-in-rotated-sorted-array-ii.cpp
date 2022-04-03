@@ -1,5 +1,11 @@
 class Solution {
 public:
+    
+    
+    /*
+        Worst Case O(N) 111111
+        Average Case O(LogN)
+    */
     int findMin(vector<int>& arr) {
         int n = arr.size();
         int low = 0;
