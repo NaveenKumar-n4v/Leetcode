@@ -9,11 +9,7 @@ public:
 	// cout << t1 << " " << t2 << " " << t3 << " " << t4 << endl;
 	int mini = t1 * 60 + t2;
 	int maxi = t3 * 60 + t4;
-	mini = min(mini, maxi);
-	maxi = max(mini, maxi);
-	// cout << mini << " " << maxi;
-	int val = maxi - mini;
-	// cout << val << endl;
+	int val = abs(maxi - mini);
 	int count = 0;
 	count += val / 60;
 	val = val % 60;
