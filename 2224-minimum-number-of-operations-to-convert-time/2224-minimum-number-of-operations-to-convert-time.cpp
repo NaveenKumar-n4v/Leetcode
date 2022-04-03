@@ -11,6 +11,7 @@ public:
 	int maxi = t3 * 60 + t4;
 	int val = abs(maxi - mini);
 	int count = 0;
+        
 	count += val / 60;
 	val = val % 60;
 
@@ -23,8 +24,7 @@ public:
 	count += val / 1;
 	val = val % 1;
         
-        
-        
+         
     return count;
     }
 };
