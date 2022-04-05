@@ -3,7 +3,9 @@ public:
     int smallestDivisor(vector<int>& nums, int threshold) {
         
         int n = nums.size();
+        // for max value of threshhold low should me 1
         int low = 1;
+        // for min value of threshhold high should be max element
         int high = *max_element(nums.begin(),nums.end());
         int betterAns = high;
         while(low<=high){
@@ -12,6 +14,7 @@ public:
             int sum = 0;
             for(auto i : nums){
                 sum += i/mid;
+                // alternative to use ceil
                 if(i%mid != 0){
                     sum +=1;
                 }
