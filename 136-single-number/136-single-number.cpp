@@ -1,18 +1,12 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        map<int,int>mpp;
-        for(auto i : nums)
-        {
-            mpp[i]++;
+        sort(nums.begin(),nums.end());
+        int num =0;
+        for(auto i : nums){
+            num = num ^ i;
         }
-        for(auto i : mpp)
-        {
-            if(i.second == 1)
-            {
-                return i.first;
-            }
-        }
-        return 0;
+        return num;
+        
     }
 };
