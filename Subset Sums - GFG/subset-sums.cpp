@@ -11,9 +11,9 @@ public:
             ans.push_back(sum);
             return;
         }
-        // sum+=arr[idx];
-        helper(idx+1,sum+arr[idx],ans,ds,arr);
-        // sum-=arr[idx];
+        sum+=arr[idx];
+        helper(idx+1,sum,ans,ds,arr);
+        sum-=arr[idx];
         helper(idx+1,sum,ans,ds,arr);
     }
 public:
