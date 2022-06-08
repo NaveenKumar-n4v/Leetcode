@@ -10,6 +10,7 @@ public:
                 ans.push_back(idx+1);
             }
         }
+        
         for(auto i : nums)cout<<i<<" ";
         cout<<endl;
         return ans;
