@@ -9,7 +9,8 @@ public:
             if(s[left] != s[right]){
                 return 2;
             }
-            left++;right--;
+            left++;
+            right--;
         }
         return 1; 
     }
