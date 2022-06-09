@@ -11,11 +11,14 @@ private:
             return;
         }
         for(int i =idx;i<s.size();i++){
+            
+            
             if(isPalindrome(s.substr(idx, i-idx+1))){
                 ds.push_back(s.substr(idx,i-idx+1));
                 helper(i+1, ans, ds, s);
                 ds.pop_back();
             }
+            
         }
     }
 public:
