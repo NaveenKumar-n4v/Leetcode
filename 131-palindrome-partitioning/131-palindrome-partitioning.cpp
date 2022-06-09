@@ -1,9 +1,11 @@
 class Solution {
 private:
-    bool isPalindrome(string s){
-        string nx=s;
-        reverse(nx.begin(),nx.end());
-        return nx == s;
+    bool isPalindrome(string s, int left, int right){
+        while(left <=  right)
+        {
+            if(s[left++] != s[right--])return false;
+        }
+        return true;
     }
     void helper(int idx, vector<vector<string>>&ans, vector<string>&ds, string s){
         if(idx == s.size()){
@@ -11,13 +13,13 @@ private:
             return;
         }
         for(int i =idx;i<s.size();i++){
+              
+           if(isPalindrome(s,idx,i)){
+               ds.push_back(s.substr(idx, i-idx+1));
+               helper(i+1, ans, ds, s);
+               ds.pop_back();
+           }
             
-            
-            if(isPalindrome(s.substr(idx, i-idx+1))){
-                ds.push_back(s.substr(idx,i-idx+1));
-                helper(i+1, ans, ds, s);
-                ds.pop_back();
-            }
             
         }
     }
