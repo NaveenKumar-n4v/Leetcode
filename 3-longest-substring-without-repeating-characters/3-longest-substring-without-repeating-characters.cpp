@@ -6,7 +6,7 @@ public:
         int maxi = 0;
         vector<int>mpp(256,-1);
         while(right != s.size()){
-            if(mpp[s[right]] != -1){
+            if(mpp[s[right]] >= 0 ){
                 left = max(mpp[s[right]]+1,left);
             }
             mpp[s[right]]=right;
