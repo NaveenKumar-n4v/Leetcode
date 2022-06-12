@@ -17,7 +17,7 @@ public:
         int Maxi = 0;
         int tempSum =0;
         
-        while(right <=n-1){
+        while(right <= n-1){
             tempSum +=nums[right];
             
             while( left < right && tempSum > val ){
