@@ -2,6 +2,14 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         
+        /*
+        a + b + c = 0;
+        a = -(b+c)
+        fix a and find b and c with 2pointer
+        TC = O(n*n)
+        SC = O(1) Auxillary Space
+        */
+        
         // -4, -1, -1, 0, 1, 2
         sort(nums.begin(),nums.end());
         vector<vector<int>>v;
