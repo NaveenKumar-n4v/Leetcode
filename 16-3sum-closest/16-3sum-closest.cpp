@@ -16,11 +16,8 @@ public:
             
             while(low < high){
                 int sum = nums[i]+nums[low]+nums[high];
-                
-                if(sum == target){
-                    return sum;
-                }
-                else if(sum > target){
+
+                if(sum > target){
                     high--;
                 }
                 else{
