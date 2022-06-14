@@ -2,18 +2,14 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
         
+        if(s == t)return true;
         if(s.size() != t.size())return false;
         map<char,int>mpp;
-        map<char,int>mpp2;
         bool flag = true;
         for(auto it : s)mpp[it]++;
-        for(auto it : t)mpp2[it]++;
-        for (auto i = mpp.begin(),it = mpp2.begin(); i != mpp.end(), it != mpp2.end(); i++,it++){
-            if((i->first == it->first) && (i->second == it->second)){
-                continue;
-            }
-            else
-                return false;
+        for(auto it : t)mpp[it]--;
+        for(auto it : mpp){
+            if(it.second>0)return false;
         }
         return true;
         
