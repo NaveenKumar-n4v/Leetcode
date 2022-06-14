@@ -2,7 +2,9 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         
-        
+        /*
+        O(N*N)
+        */
 //         int counter = 0;
 //         for(int i = 0;i<height.size();i++){
             
@@ -32,6 +34,10 @@ public:
         
 //         return counter;
         
+        
+        /*
+        O(3N)
+        */
         int n =height.size();
         vector<int>prefix(n);
         vector<int>suffix(n);
