@@ -80,7 +80,7 @@ public:
         int rightMaxi = 0;
         int counter = 0;
         
-        while(left <= right){
+        while(left < right){
             
             if(height[left] <= height[right]){
                 
