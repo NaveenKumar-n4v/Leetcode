@@ -7,10 +7,14 @@ private:
             return;
         }
         if(left < n){
-            func(left+1, right, n, ans, temp+"(");
+            temp.push_back('(');
+            func(left+1, right, n, ans, temp);
+            temp.pop_back();
         }
         if (right < left){
-            func(left, right+1, n, ans, temp+")");
+            temp.push_back(')');
+            func(left, right+1, n, ans, temp);
+            temp.pop_back();
         }
     }
     
