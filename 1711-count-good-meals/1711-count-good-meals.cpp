@@ -1,8 +1,8 @@
 
+const int mod = 1000000007;
 class Solution {
 public:
     int countPairs(vector<int>& v) {
-        int mod = 1000000007;
         unordered_map<int,int>mpp;
         sort(v.begin(),v.end());
         mpp[v[0]]++;
