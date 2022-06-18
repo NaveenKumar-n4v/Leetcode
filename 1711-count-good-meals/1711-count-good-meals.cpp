@@ -3,7 +3,6 @@ class Solution {
 public:
     int countPairs(vector<int>& v) {
         int mod = 1000000007;
-        if(v.size() == 1) return 0;
         unordered_map<int,int>mpp;
         sort(v.begin(),v.end());
         mpp[v[0]]++;
