@@ -16,6 +16,6 @@ public:
             }
             mpp[v[i]]++;
         }
-    return counter %(int)mod;
+    return counter %mod;
     }
 };
