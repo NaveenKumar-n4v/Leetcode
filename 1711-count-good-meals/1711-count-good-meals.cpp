@@ -1,5 +1,5 @@
-
-const int mod = 1000000007;
+#include<bits/stdc++.h>
+#define mod 1000000007
 class Solution {
 public:
     int countPairs(vector<int>& v) {
