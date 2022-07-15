@@ -3,7 +3,6 @@ public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
         
         int right =0;
-        int n = nums.size();
         int sum =0;
         int maxi = sum;
         while(right < nums.size()){
