@@ -16,8 +16,9 @@ public:
                 if(!st.empty()){
                     ans[i] = st.top();
                 }
-                else
+                else{
                     ans[i] = -1;
+                }
             }
             st.push(nums[i%n]);
         }
