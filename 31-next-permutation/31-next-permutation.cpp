@@ -19,9 +19,9 @@ public:
         for(int i = n-1; i>val; i--){
             if(nums[i] > nums[val]){
                 swap(nums[i], nums[val]);
-                reverse(nums.begin()+val+1, nums.end());
                 break;
             }
         }
+        reverse(nums.begin()+val+1, nums.end());
     }
 };
