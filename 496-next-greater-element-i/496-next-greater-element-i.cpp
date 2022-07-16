@@ -36,7 +36,6 @@ public:
             
             st.push(nums2[i]);
         }
-        for(auto it :nge)cout<<it.first<<" "<<it.second<<endl;
         vector<int>ans;
         for(auto it : nums1){
            ans.push_back(nge[it]); 
