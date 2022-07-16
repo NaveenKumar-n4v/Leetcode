@@ -16,12 +16,13 @@ public:
             reverse(nums.begin(), nums.end());
             return;
         }
-        for(int i = n-1; i>val; i--){
+        int i=0;
+        for(i = n-1; i>val; i--){
             if(nums[i] > nums[val]){
-                swap(nums[i], nums[val]);
                 break;
             }
         }
+        swap(nums[i], nums[val]);
         reverse(nums.begin()+val+1, nums.end());
     }
 };
