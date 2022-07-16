@@ -22,32 +22,24 @@ public:
         // }
         // return ans;
         
-        
-        vector<int>nge(nums2.size());
+        map<int,int>nge;
         stack<int>st;
         for(int i=nums2.size()-1;i>=0;i--){
             while(!st.empty() && st.top() <= nums2[i]){
                 st.pop();
             }
             if(st.empty() ==  false){
-                nge[i] = st.top();
+                nge[nums2[i]] = st.top();
             }
             else
-                nge[i] = -1;
+                nge[nums2[i]] = -1;
             
             st.push(nums2[i]);
         }
-        for(auto i : nge)cout<<i<<" ";
-        map<int,int>mpp;
+        for(auto it :nge)cout<<it.first<<" "<<it.second<<endl;
         vector<int>ans;
-        for(int i=0;i<nums2.size();i++){
-            mpp[nums2[i]] = i;
-        }
-        for(auto i : mpp)cout<<i.first<<" "<<i.second<<endl;
-        for(int i=0;i<nums1.size();i++){
-            if(mpp.find(nums1[i]) != mpp.end()){
-                ans.push_back(nge[mpp[nums1[i]]]);
-            }
+        for(auto it : nums1){
+           ans.push_back(nge[it]); 
         }
         return ans;
         
