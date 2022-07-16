@@ -7,6 +7,7 @@ public:
         vector<int>ans(n);
         for(int i = (2*n)-1; i>=0 ;i--){
             
+            //i%n for concatenation of array
             while(!st.empty() && nums[i%n] >= st.top()){
                 st.pop();
             }
