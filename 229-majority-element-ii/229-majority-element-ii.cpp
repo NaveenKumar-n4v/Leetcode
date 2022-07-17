@@ -2,12 +2,13 @@ class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
         
-        int k = nums.size()/3;
-        map<int, int>umpp;
-        for(auto i : nums)umpp[i]++;
+        int n = nums.size();
+        map<int, int>mpp;
+        for(auto i : nums)mpp[i]++;
         vector<int>ans;
-        for(auto i : umpp){
-            if(i.second > k)ans.push_back(i.first);
+        n = n/3;
+        for(auto i : mpp){
+            if(i.second > n)ans.push_back(i.first);
         }
         return ans;
     
