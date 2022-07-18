@@ -7,7 +7,7 @@ public:
         int pse[n];
         
         for (int i = n-1; i >= 0; --i)
-	{
+	    {
 		while (!st.empty() && start[st.top()] >= start[i]) {
 			st.pop();
 		}
@@ -17,10 +17,10 @@ public:
 		else
 			nse[i] = st.top()-1;
 		st.push(i);
-	}
+	    }
         while(!st.empty())st.pop();
         for (int i = 0; i < n; ++i)
-	{
+	    {
 		while (!st.empty() && start[st.top()] >= start[i]) {
 			st.pop();
 		}
@@ -30,7 +30,7 @@ public:
 		else
 			pse[i] = st.top()+1;
 		st.push(i);
-	}
+	    }
         
         int maxi =0;
         for(int i=0;i<start.size();i++)maxi = max(maxi, (nse[i] - pse[i] +1)*start[i]);
