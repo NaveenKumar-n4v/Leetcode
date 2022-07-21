@@ -9,15 +9,12 @@ public:
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(grid[i][j] != 0)totalOranges++;
-                if(grid[i][j] == 2){
-                    q.push({i,j});
-                }
+                if(grid[i][j] == 2)q.push({i,j});
             }
         }
         int dx[4] = {-1, 1, 0, 0};
         int dy[4] = {0, 0, 1, -1};
-        int total = 0; 
-        int days =0;
+        int total = 0, days=0;
         while(!q.empty()){
             int currentRotten = q.size();
             total += currentRotten;
