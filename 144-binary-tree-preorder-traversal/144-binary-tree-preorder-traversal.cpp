@@ -29,11 +29,11 @@ public:
         st.push(root);
         if(root == NULL)return ans;
         while(!st.empty()){
-            TreeNode* node = st.top();
+            root = st.top();
             st.pop();
-            ans.push_back(node->val);
-            if(node->right != NULL)st.push(node->right);
-            if(node->left != NULL)st.push(node->left);
+            ans.push_back(root->val);
+            if(root->right != NULL)st.push(root->right);
+            if(root->left != NULL)st.push(root->left);
         }
         return ans;
     }
