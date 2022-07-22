@@ -23,12 +23,8 @@ public:
             for(int i=0;i<n;i++){
                 TreeNode* ptr = q.front();
                 q.pop();
-                if(ptr->left != NULL){
-                    q.push(ptr->left);
-                }
-                if(ptr->right != NULL){
-                    q.push(ptr->right);
-                }
+                if(ptr->left != NULL)q.push(ptr->left);
+                if(ptr->right != NULL)q.push(ptr->right);
                 temp.push_back(ptr->val);
             }
             ans.push_back(temp);
