@@ -32,6 +32,14 @@ public:
 		st.push(i);
 	    }
         
+        // for(int i=0;i<n;i++)cout<<nse[i]<<" ";
+        // cout<<endl;
+        // for(int i=0;i<n;i++)cout<<pse[i]<<" ";
+        // cout<<endl;
+                
+                
+
+        
         int maxi =0;
         for(int i=0;i<start.size();i++)maxi = max(maxi, (nse[i] - pse[i] +1)*start[i]);
         return maxi;
