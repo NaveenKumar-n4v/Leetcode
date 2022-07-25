@@ -18,7 +18,6 @@ public:
         q.push(root);
         if(root == NULL)return ans;
         TreeNode* node = root;
-        // bool flag = true;
         int ck =0;
         while(!q.empty()){
             int n = q.size();
@@ -26,13 +25,13 @@ public:
             for(int i=0;i<n;i++){
                 node = q.front();
                 q.pop();
-                temp.push_back(node->val);
                 if(node->left != NULL){
                     q.push(node->left);
                 }
                 if(node->right != NULL){
                     q.push(node->right);
                 }
+                temp.push_back(node->val);
             }
             if(ck%2 == 0)
                 ans.push_back(temp);
