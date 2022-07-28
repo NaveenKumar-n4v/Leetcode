@@ -14,6 +14,7 @@ private:
     void func(TreeNode* temp, int level, vector<int>&ans){
     
         if(temp == NULL)return;
+        //we always go right so when the size and level matches for only first node 
         if(ans.size() == level)ans.push_back(temp->val);
         func(temp->right, level+1, ans);
         func(temp->left, level+1, ans);
