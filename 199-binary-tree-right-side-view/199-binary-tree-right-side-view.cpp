@@ -22,6 +22,10 @@ private:
     
 public:
     vector<int> rightSideView(TreeNode* root) {
+        /*
+        TC - O(N)
+        SC - O(Height)
+        */
         vector<int>ans;
         func(root, 0, ans);
         return ans;
