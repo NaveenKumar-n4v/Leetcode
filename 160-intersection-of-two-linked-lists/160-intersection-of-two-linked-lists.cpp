@@ -72,7 +72,7 @@ public:
             dummy1  = dummy1 == NULL?h2:dummy1->next;
             dummy2 = dummy2 == NULL?h1:dummy2->next;
         }
-        return dummy1;
+        return dummy2;
         
     }
 };
