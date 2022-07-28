@@ -22,6 +22,7 @@ private:
         if(left->val != right->val){
             return false;
         }
+        //call simoltanously and check the values 
         return func(left->left, right->right) && func(left->right, right->left);
     }
 public:
