@@ -20,8 +20,13 @@ public:
         TreeNode* left = lowestCommonAncestor(root->left, p, q);
         TreeNode* right = lowestCommonAncestor(root->right, p, q);
         
+        //either p / q lies on right
         if(left  == NULL)return right;
+        
+        //either p / q lies on left
         if(right == NULL)return left;
+        
+        // p / q lies on both left and right
         else{
             return root;
         }
