@@ -9,6 +9,7 @@ public:
         while(low <= high){
             int mid = low + (high - low)/2;
             if(nums[mid] == target)return true;
+            //when duplicates remove from both end
             if(nums[low] == nums[mid] && nums[mid] == nums[high]){
                 high--;
                 low++;
