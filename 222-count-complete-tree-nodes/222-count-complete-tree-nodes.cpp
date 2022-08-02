@@ -1,14 +1,3 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
 class Solution {
 private:
     void func(TreeNode* node, int &cnt){
@@ -20,20 +9,20 @@ private:
 public:
     int countNodes(TreeNode* root) {
         
-//         if(root == NULL)return 0;
-        
-//         int l = lh(root);
-//         int r = rh(root);
-        
-//         // on complete BT
-//         if( l == r )return pow(2, l) - 1;
-        
-//         return 1 + countNodes(root->left) + countNodes(root->right); 
-        
-        int cnt =0;
         if(root == NULL)return 0;
-        func(root, cnt);
-        return cnt;
+        
+        int l = lh(root);
+        int r = rh(root);
+        
+        // on complete BT
+        if( l == r )return pow(2, l) - 1;
+        
+        return 1 + countNodes(root->left) + countNodes(root->right); 
+        
+        // int cnt =0;
+        // if(root == NULL)return 0;
+        // func(root, cnt);
+        // return cnt;
         
     }
     int lh(TreeNode* root){
