@@ -8,6 +8,7 @@
  * };
  */
 class Solution {
+    
 private:
     void func(unordered_map<TreeNode*, TreeNode*>&mpp, TreeNode* root){
         queue<TreeNode*>q;
@@ -28,7 +29,9 @@ private:
 public:
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
         unordered_map<TreeNode*, TreeNode*>parentMark;
+        // func to map nodes with parents coz cant traverse back in BT
         func(parentMark, root);
+        // vis to not-recheck again
         unordered_map<TreeNode*, bool>visited;
         vector<int>ans;
         queue<TreeNode*>q;
@@ -38,6 +41,7 @@ public:
         
         while(!q.empty()){
             int n = q.size();
+            //size
             if(cnt++ == k)break;
             for(int i=0;i<n;i++){
                 TreeNode* node = q.front();
@@ -50,6 +54,7 @@ public:
                     q.push(node->right);
                     visited[node->right] = true;
                 }
+                // stores the value in Q itself (nodes at dis K)
                 if(parentMark[node] != NULL && visited[parentMark[node]] == false){
                     q.push(parentMark[node]);
                     visited[parentMark[node]] = true;
