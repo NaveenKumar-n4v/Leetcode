@@ -11,19 +11,14 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        /*
-        TC - O(N) No of Nodes
-        SC - O(1) No Extra Space Except 1 Ptr
-        */
-       ListNode* dummy=NULL;
-        while(head){
-            ListNode* nextNode = head->next;
-            // head->next is pointer pointing to current next value 
-            // So we make them swift to dummy node for reversal
-            head->next=dummy;
-            
+        
+        ListNode* dummy = NULL;
+        
+        while(head != NULL){
+          ListNode* next = head->next;
+            head->next = dummy;
             dummy = head;
-            head = nextNode;
+            head = next;
         }
         return dummy;
         
