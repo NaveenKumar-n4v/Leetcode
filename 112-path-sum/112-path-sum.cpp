@@ -18,6 +18,7 @@ public:
         }
         targetSum -= root->val;
         
+        //check if sum is 0  and sum found on root to leaves.
         if(targetSum == 0 && root->left == NULL && root->right == NULL){
             return true;
         }
