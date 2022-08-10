@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-       
         vector<int>v;
         unordered_map<int,int>umpp;
         for(int i = 0;i<nums.size();i++){
@@ -13,5 +12,6 @@ public:
             umpp[nums[i]]=i;
         }
         return v;
+        
     }
 };
