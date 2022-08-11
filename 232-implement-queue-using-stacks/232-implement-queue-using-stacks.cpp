@@ -1,7 +1,7 @@
 class MyQueue {
 public:
-    stack<int> s;
-    stack<int> q;
+    stack<int> s; //input
+    stack<int> q; //output
     MyQueue() {
         
     }
