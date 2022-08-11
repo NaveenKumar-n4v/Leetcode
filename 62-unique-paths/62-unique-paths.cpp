@@ -11,10 +11,10 @@ public:
         // return func(0, 0, m, n);
         int N = m + n - 2;
         int r = m - 1;
-        double ans  = 1;
+        long long ans  = 1;
         for(int i = 1;i<= r;i++){
             ans = ans * ( N - r + i ) / i; 
         }
-        return (int)ans;
+        return ans;
     }
 };
