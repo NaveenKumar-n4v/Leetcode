@@ -22,6 +22,7 @@ public:
             if(node == NULL)continue;
             if(node->left != NULL)st.push(node->left);
             if(node->right != NULL)st.push(node->right);
+            // just swap nodes
             swap(node->left, node->right);
         }
         return root;
