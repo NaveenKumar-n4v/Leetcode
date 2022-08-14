@@ -13,6 +13,7 @@ class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
         
+        if(root == NULL)return NULL;
         stack<TreeNode*>st;
         st.push(root);
         while(!st.empty()){
