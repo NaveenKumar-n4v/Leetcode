@@ -2,6 +2,7 @@ class Solution {
 public:
     int longestConsecutive(vector<int>& nums) 
     {
+        // 102 4 100 1 101 3 2
         set<int>st;
         for(auto i : nums)st.insert(i);
         int totMaxi = 0;
