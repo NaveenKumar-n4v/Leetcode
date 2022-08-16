@@ -2,7 +2,6 @@ class Solution {
 public:
     int numDecodings(string s) {
         
-
         if(s.length() == 0 || s[0] == '0') return 0;
         if(s.length() == 1) return 1;
         
@@ -17,5 +16,6 @@ public:
             count2 = count;  // count2 prev sol
         }
         return count2;
+        
     }
 };
